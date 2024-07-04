@@ -1,5 +1,6 @@
 let cash = document.getElementById('cash');
 let click = document.getElementById('click');
+let out = document.getElementById('change-due');
 let x = click.addEventListener('click', check);
 let price = 1.87;
 let cid = [
@@ -16,5 +17,12 @@ let cid = [
 
 function check() {
     cash
-    console.log(cash.value)
+    let z = cash.value;
+    //console.log(cid[4][1])
+    for(let i = 0; i < cid.length; i++) {
+        if(z == cid[i][1]) {
+            console.log('yes')
+        }
+    }
+    
 }
