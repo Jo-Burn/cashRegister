@@ -19,13 +19,21 @@ function check() {
     cash
     let z = cash.value;
     let test = [];
+    let count = 0;
     //console.log(cid[4][1])
-    for(let i = 0; i < cid.length; i++) {
-        while(z <= cid[i][1]) {
-            console.log('yes')
-          z - cid[i][1];
-          test.push(cid[i][1])
-        } 
+    if(count !== 10) {
+        for(let i = 0; i < cid.length; i++) {
+            while(z <= cid[i][1]) {
+                console.log('yes')
+              z - cid[i][1];
+              test.push(cid[i][1])
+              count++
+              console.log(count)
+              console.log('test')
+            } 
+        }
+    } else {
+        out.innerHTML = test.concat;
     }
     out.innerHTML = test.concat;
 }
