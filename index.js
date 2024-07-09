@@ -23,7 +23,7 @@ function check() {
     //console.log(cid[4][1])
     for(let i = 0; i < cid.length; i++) {
      if(count !== 10) {
-        while(z <= cid[i][1]) {
+        while(z >= cid[i][1]) {
           z - cid[i][1];
           test.push(cid[i][1])
           count++
