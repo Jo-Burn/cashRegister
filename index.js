@@ -24,11 +24,12 @@ function check() {
     if(count !== 10) {
       for(let i = 0; i < cid.length; i++) {
         while(z >= price) {
-          Math.floor(z -= cid[i][1]);
+         let m = Math.round(z -= cid[i][1]);
+         let ma = Math.round(m + Number.EPSILON)
           test.push(cid[i][1])
           count++
           console.log(count)
-          console.log(z)
+          console.log(ma)
         }
       }
     }else {
