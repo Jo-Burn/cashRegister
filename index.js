@@ -1,7 +1,7 @@
 let cash = document.getElementById('cash');
 let click = document.getElementById('click');
 let out = document.getElementById('change-due');
-let x = click.addEventListener('click', check);
+let x = click.addEventListener('click', check());
 let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
@@ -22,15 +22,14 @@ function check() {
     let count = 0;
     //console.log(cid[4][1])
     if(count !== 10) {
-      for(let i = 0; i < cid.length; i++) {
-        while(z >= price) {
-         let m = Math.round(z -= cid[i][1]);
-         let ma = Math.round(m + Number.EPSILON)
+      for(let i = cid.length; i > 0; i--) {
+        if(z >= price) {
+         Math.floor(z -= cid[i][1]);
+        
           test.push(cid[i][1])
           count++
           console.log(count)
-          console.log(ma)
-        }
+       }
       }
     }else {
        out.innerHTML = 'no';
