@@ -22,13 +22,13 @@ function check() {
     let count = 0;
     //console.log(cid[4][1])
     if(count !== 10) {
-      for(let i = cid.length; i > 0; i--) {
+      for(let i = 0; i < cid.length; i++) {
         if(z >= price) {
-         Math.floor( z -= cid[i][1] );
+         Math.floor(z -= cid[i][1]);
         
           test.push(cid[i][1])
           count++
-          console.log(count)
+          console.log(test.concat)
        }
       }
     }else {
