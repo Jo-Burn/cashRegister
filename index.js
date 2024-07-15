@@ -1,7 +1,7 @@
 let cash = document.getElementById('cash');
 let click = document.getElementById('click');
 let out = document.getElementById('change-due');
-let x = click.addEventListener('click', check());
+//let x = click.addEventListener('click', check());
 let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
@@ -24,7 +24,7 @@ function check() {
     if(count !== 10) {
       for(let i = cid.length; i > 0; i--) {
         if(z >= price) {
-         Math.floor(z -= cid[i][1]);
+         Math.floor( z -= cid[i][1] );
         
           test.push(cid[i][1])
           count++
