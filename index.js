@@ -33,7 +33,7 @@ function check() {
       }
     }else {
        out.innerHTML = 'no';
-    }
+    } 
      
     //out.innerHTML = test.concat;
 } 
