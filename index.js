@@ -14,7 +14,7 @@ let cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-//do not run!
+
 function check() {
     cash
     let z = cash.value;
