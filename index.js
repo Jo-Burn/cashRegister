@@ -19,6 +19,7 @@ function check() {
     cash
     let z = cash.value;
     let test = [];
+    let test1 = 0
     let count = 0;
     //console.log(cid[4][1])
     if(count !== 10) {
@@ -28,12 +29,17 @@ function check() {
         
           test.push(cid[i][1])
           count++
-          console.log(test.concat)
+          console.log(test)
        }
       }
     }else {
        out.innerHTML = 'no';
     } 
-     
-    //out.innerHTML = test.concat;
+     if(test !== test1) {
+      for(let i = 0; i < test.length; i++) {
+        Math.floor(test[i] += test1)
+        console.log(test1)
+       }
+     }
+    
 } 
