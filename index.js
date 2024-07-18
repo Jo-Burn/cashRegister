@@ -27,14 +27,19 @@ function check() {
         if(z >= price) {
          Math.floor(z -= cid[i][1]);
           test.push(cid[i][1])
-          Math.floor(test += test1)
           count++
           console.log(test1)
-          //console.log(test)
        }
       }
     }else {
        out.innerHTML = 'no';
     } 
-    
+    add(test1)
+    out.innerHTML = test1
 } 
+function add(z) {
+ let t = 0;
+ Math.floor(z += t)
+ console.log(t)
+ return t;
+}
