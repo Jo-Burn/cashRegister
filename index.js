@@ -28,15 +28,17 @@ function check() {
          Math.floor(z -= cid[i][1]);
           test.push(cid[i][1])
           count++
-          console.log(test1)
+          
        }
       }
     }else {
        out.innerHTML = 'no';
     } 
-    add(test1)
-    out.innerHTML = test1
+   // add(test1)
+    out.innerHTML = add(test1);
 } 
+
+
 function add(z) {
  let t = 0;
  Math.floor(z += t)
