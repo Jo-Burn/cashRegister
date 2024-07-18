@@ -26,20 +26,15 @@ function check() {
       for(let i = 0; i < cid.length; i++) {
         if(z >= price) {
          Math.floor(z -= cid[i][1]);
-        
           test.push(cid[i][1])
+          Math.floor(test += test1)
           count++
-          console.log(test)
+          console.log(test1)
+          //console.log(test)
        }
       }
     }else {
        out.innerHTML = 'no';
     } 
-     if(test !== test1) {
-      for(let i = 0; i < test.length; i++) {
-        Math.floor(test[i] += test1)
-        console.log(test1)
-       }
-     }
     
 } 
