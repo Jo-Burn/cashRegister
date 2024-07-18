@@ -24,24 +24,24 @@ function check() {
     //console.log(cid[4][1])
     if(count !== 10) {
       for(let i = 0; i < cid.length; i++) {
-        if(z >= price) {
+        if(z >= price && z >= 0) {
          Math.floor(z -= cid[i][1]);
           test.push(cid[i][1])
           count++
-          
+          console.log(test) 
        }
       }
     }else {
        out.innerHTML = 'no';
     } 
-   // add(test1)
-    out.innerHTML = add(test1);
+    
+    out.innerHTML = add(test)
+    function add(z) {
+      let t = 0;
+      Math.floor(z += t)
+      console.log(t)
+      return t;
+     }
 } 
 
 
-function add(z) {
- let t = 0;
- Math.floor(z += t)
- console.log(t)
- return t;
-}
