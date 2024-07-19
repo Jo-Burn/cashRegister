@@ -21,7 +21,7 @@ function check() {
     let test = [];
     let test1 = 0
     let count = 0;
-    //console.log(cid[4][1])
+    /*console.log(cid[4][1])
     if(count !== 10) {
       for(let i = 0; i < cid.length; i++) {
         if(z >= price && z >= 0) {
@@ -40,8 +40,15 @@ function check() {
       let t = 0;
       Math.floor(z += t)
       console.log(t)
-      return t;
-     }
+      return t; 
+     } */
+    if(z >= price) {
+      Math.floor(z -= price);
+      Math.round(z);
+      console.log(z)
+    } else {
+      out.innerHTML = "no"
+    }
 } 
 
 
