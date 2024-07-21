@@ -44,8 +44,13 @@ function check() {
      } */
     if(z >= price) {
       Math.floor(z -= price);
-     let v = Math.round((z + Number.EPSILON) * 100) / 100;
-      console.log(v)
+      let v = Math.round((z + Number.EPSILON) * 100) / 100;
+      //console.log(v)
+      if(v >= 0) {
+        for(let i = cid.length; i > 0; i--) {
+          console.log('ok')
+        }
+      }
     } else {
       out.innerHTML = "no"
     }
