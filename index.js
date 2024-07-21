@@ -44,11 +44,17 @@ function check() {
      } */
     if(z >= price) {
       Math.floor(z -= price);
-      let v = Math.round((z + Number.EPSILON) * 100) / 100;
-      //console.log(v)
+      let v = add(z)
+      console.log(v)
       if(v >= 0) {
-        for(let i = cid.length; i > 0; i--) {
-          console.log('ok')
+        if(count != 10) {
+          for(let i = cid.length; i > 0; i--) {
+            if(v >= cid[i][1]) {
+              Math.floor(v -= cid[i][1]);
+              console.log(v)
+            }
+          }
+          console.log(count)
         }
       }
     } else {
@@ -56,4 +62,6 @@ function check() {
     }
 } 
 
-
+function add(a) {
+ return Math.round((a + Number.EPSILON) * 100) / 100;
+}
