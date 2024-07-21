@@ -44,8 +44,8 @@ function check() {
      } */
     if(z >= price) {
       Math.floor(z -= price);
-      Math.round(z);
-      console.log(z)
+     let v = Math.round((z + Number.EPSILON) * 100) / 100;
+      console.log(v)
     } else {
       out.innerHTML = "no"
     }
