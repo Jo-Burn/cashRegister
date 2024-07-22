@@ -46,12 +46,13 @@ function check() {
       Math.floor(z -= price);
       let v = add(z)
       console.log(v)
-      if(v >= 0) {
+      if(v > 0) {
         if(count != 10) {
-          for(let i = cid.length; i > 0; i--) {
+          for(/*let i = cid.length; i >= 0; i--*/ let i = 0; i < cid.length; i++) {
             if(v >= cid[i][1]) {
               Math.floor(v -= cid[i][1]);
-              console.log(v)
+              test.push(add(v))
+              console.log(test)
             }
           }
           console.log(count)
