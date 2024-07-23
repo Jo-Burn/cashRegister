@@ -45,9 +45,8 @@ function check() {
     if(z >= price) {
       Math.floor(z -= price);
       let v = add(z)
-      //console.log(v)
       if(v > 0) {
-        if(count != 10) {
+        if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
             if(v >= cid[i][1]) {
               Math.floor(v -= cid[i][1]);
@@ -55,10 +54,11 @@ function check() {
              // console.log(test)
               count++
             }
-            console.log(v)
+            //console.log(v)
           }
-          //console.log(count)
+          console.log(count)
         }
+        console.log(test);
       }
     } else {
       out.innerHTML = "no"
