@@ -45,17 +45,19 @@ function check() {
     if(z >= price) {
       Math.floor(z -= price);
       let v = add(z)
-      console.log(v)
+      //console.log(v)
       if(v > 0) {
         if(count != 10) {
-          for(/*let i = cid.length; i >= 0; i--*/ let i = 0; i < cid.length; i++) {
+          for(let i = 0; i < cid.length; i++) {
             if(v >= cid[i][1]) {
               Math.floor(v -= cid[i][1]);
               test.push(add(v))
-              console.log(test)
+             // console.log(test)
+              count++
             }
+            console.log(v)
           }
-          console.log(count)
+          //console.log(count)
         }
       }
     } else {
