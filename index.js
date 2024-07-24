@@ -48,11 +48,16 @@ function check() {
       if(v > 0) {
         if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
-            if(v >= cid[i][1]) {
-              Math.floor(v -= cid[i][1]);
-              test.push(add(v))
-             // console.log(test)
-              count++
+            if (v >= 0) {
+              if(v >= cid[i][1]) {
+                Math.floor(v -= cid[i][1]);
+                test.push(cid[i][0])
+               // console.log(test)
+                count++
+              }
+            } else {
+              console.log('done')
+              break 
             }
             //console.log(v)
           }
