@@ -44,7 +44,7 @@ function check() {
      } */
     if(z >= price) {
       Math.floor(z -= price);
-      let v = add(z)
+      let v = round(z)
       if(v > 0) {
         if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
@@ -70,6 +70,6 @@ function check() {
     }
 } 
 
-function add(a) {
+function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
