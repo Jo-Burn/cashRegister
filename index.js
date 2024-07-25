@@ -46,13 +46,14 @@ function check() {
       Math.floor(z -= price);
       let v = round(z)
       if(v > 0) {
+        // count is a safety measure
         if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
             if (v >= 0) {
               if(v >= cid[i][1]) {
                 Math.floor(v -= cid[i][1]);
                 test.push(cid[i][0])
-               // console.log(test)
+                console.log(round(v))
                 count++
               }
             } else {
