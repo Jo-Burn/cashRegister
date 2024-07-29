@@ -51,11 +51,12 @@ function check() {
           for(let i = 0; i < cid.length; i++) {
             if (v >= 0) {
               if(v >= cid[i][1]) {
-                mathSub(v, cid[i][1])
-                console.log( mathSub(v, cid[i][1]))
+                //mathSub(v, cid[i][1])
+                console.log(v, cid[i][1])
+                console.log(v -= cid[i][1]);
                 test.push(cid[i][0])
                 test1.push(v)
-                console.log(test1)
+               // console.log(test1)
                //console.log(round(v))
                 count++
               }
@@ -67,14 +68,15 @@ function check() {
           }
           //console.log(count)
         }
-        console.log(test);
+       // console.log(test);
       }
     } else {
       out.innerHTML = "no"
     }
 } 
 function mathSub(a, b) {
-  return Math.floor(a -= b)
+  let c = a -= b;
+  return c
 }
 function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
