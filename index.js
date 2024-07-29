@@ -49,20 +49,22 @@ function check() {
         // count is a safety measure
         if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
-            if (v >= 0) {
-              if(v >= cid[i][1]) {
+            if(v >= 0) {
                 //mathSub(v, cid[i][1])
                 console.log(v, cid[i][1])
-                console.log(v -= cid[i][1]);
+                v -= cid[i][1];                
                 test.push(cid[i][0])
                 test1.push(v)
                // console.log(test1)
-               //console.log(round(v))
+               console.log(round(v))
                 count++
+              if(i == cid.length && v >= 0) {
+                out.innerHTML = "Status: INSUFFICIENT_FUNDS"
+                break
               }
             } else {
-              console.log('done')
-              break 
+              out.innerHTML = "Done";
+              break
             }
             //console.log(v)
           }
