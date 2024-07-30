@@ -66,9 +66,11 @@ function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
 function mon(a) {
-  if(z > 0) {
+  if(a > 0) {
     for(let i = cid.length; i > 0; i--) {
-     
+     if(cid[i][1] >= a) {
+      
+     }
     }
   }
   console.log(`mon works ${a}`);
