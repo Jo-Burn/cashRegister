@@ -57,7 +57,7 @@ function check() {
             }
            }
         }
-        return mon(round(z))
+        //return mon(round(z))
       }
     } else {
       out.innerHTML = "no"
