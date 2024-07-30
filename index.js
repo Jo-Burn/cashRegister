@@ -47,10 +47,12 @@ function check() {
         console.log('Finale', v)
         if(v >= 0) {
           out.innerHTML = "Status: INSUFFICIENT_FUNDS"
+          
         }
         if(v <= 0) {
           out.innerHTML = `Status: Open[${test}]`
         }
+        return mon(round(z))
       }
     } else {
       out.innerHTML = "no"
@@ -62,4 +64,13 @@ function mathSub(a, b) {
 }
 function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
+}
+function mon(a) {
+  if(z > 0) {
+    for(let i = cid.length; i > 0; i--) {
+     
+    }
+  }
+  console.log(`mon works ${a}`);
+  
 }
