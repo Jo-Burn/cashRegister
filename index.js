@@ -51,6 +51,11 @@ function check() {
         }
         if(v <= 0) {
           out.innerHTML = `Status: Open[${test}]`
+          for(let i = cid.length; i > 0; i--) {
+            if(cid[i][1] >= v) {
+             console.log(cid[i][0], cid[i][1])
+            }
+           }
         }
         return mon(round(z))
       }
@@ -67,11 +72,7 @@ function round(a) {
 }
 function mon(a) {
   if(a > 0) {
-    for(let i = cid.length; i > 0; i--) {
-     if(cid[i][1] >= a) {
-      
-     }
-    }
+   
   }
   console.log(`mon works ${a}`);
   
