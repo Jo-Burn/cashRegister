@@ -51,7 +51,7 @@ function check() {
         }
         if(v <= 0) {
           out.innerHTML = `Status: Open[${test}]`
-          for(let i = cid.length; i > 0; i--) {
+          for(let i = 0; i < cid.length; i++) {
             if(cid[i][1] >= v) {
              console.log(cid[i][0], cid[i][1])
             }
