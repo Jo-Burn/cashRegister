@@ -2,6 +2,7 @@
 let click = document.getElementById('click');
 let out = document.getElementById('change-due');
 //let x = click.addEventListener('click', check());
+let test = [];
 let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
@@ -18,7 +19,7 @@ console.log(`Welcome to My Website, Hope you enjoy <3`)
 function check() {
     cash
     let z = cash.value;
-    let test = [];
+    
     let test1 = []
     let count = 0;
     if(z >= price) {
@@ -50,12 +51,15 @@ function check() {
           
         }
         if(v <= 0) {
+          mon(v)
           out.innerHTML = `Status: Open[${test}]`
+          for(let i = cid.length; i > 0; i--) {
           for(let i = 0; i < cid.length; i++) {
             if(cid[i][1] >= v) {
              console.log(cid[i][0], cid[i][1])
             }
            }
+        }
         }
         //return mon(round(z))
       }
@@ -71,9 +75,14 @@ function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
 function mon(a) {
-  if(a > 0) {
-   
-  }
+  let b = [];
   console.log(`mon works ${a}`);
-  
+  //out.innerHTML = `Status: Open[${test}]`
+          for(let i = 0; i < cid.length; i++) {
+            let count = mathSub(a, cid[i][1]);
+            
+            b.push(count);
+            
+           }
+           console.log(b)
 }
