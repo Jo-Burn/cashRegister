@@ -56,7 +56,7 @@ function check() {
           for(let i = cid.length; i > 0; i--) {
           for(let i = 0; i < cid.length; i++) {
             if(cid[i][1] >= v) {
-             console.log(cid[i][0], cid[i][1])
+             //console.log(cid[i][0], cid[i][1])
             }
            }
         }
@@ -76,13 +76,16 @@ function round(a) {
 }
 function mon(a) {
   let b = [];
+  let c = b.reverse()[0];
   console.log(`mon works ${a}`);
   //out.innerHTML = `Status: Open[${test}]`
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
-            b.push(count);
-            b.sort(function(a, b){return a - b});
-            
+            b.push(count);            
            }
-           console.log(b)
+           c
+           b.sort(function(a, b){return a - b})
+           
+           return console.log(b[c]);
+           //console.log(b)
 }
