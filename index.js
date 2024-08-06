@@ -77,6 +77,8 @@ function mon(a) {
            b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]);
-           
+           for(let i = 0; i < cid.length; i++) {
+            
+           }
            //console.log(b)
 }
