@@ -76,16 +76,13 @@ function round(a) {
 }
 function mon(a) {
   let b = [];
-  let c = b.reverse()[0];
   console.log(`mon works ${a}`);
-  //out.innerHTML = `Status: Open[${test}]`
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
             b.push(count);            
            }
-           c
            b.sort(function(a, b){return a - b})
-           
-           return console.log(b[c]);
+           console.log(b.reverse());
+           return console.log(round(b[0]));
            //console.log(b)
 }
