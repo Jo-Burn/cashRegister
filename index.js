@@ -51,9 +51,8 @@ function check() {
           
         }
         if(v <= 0) {
-          let m = mon(v);
-          console.log(m)
-          out.innerHTML = `Status: Open[${m}]`
+          mon(v);
+          out.innerHTML = `Status: Open[${test}]`
         }
         //return mon(round(z))
       }
@@ -76,7 +75,8 @@ function mon(a) {
             b.push(count);            
            }
            b.sort(function(a, b){return a - b})
-           console.log(b.reverse());
-           return console.log(round(b[0]));
+           b.reverse();
+           let c = round(b[0]);
+           
            //console.log(b)
 }
