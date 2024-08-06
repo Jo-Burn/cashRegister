@@ -80,8 +80,8 @@ function mon(a) {
   //out.innerHTML = `Status: Open[${test}]`
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
-            
             b.push(count);
+            b.sort(function(a, b){return a - b});
             
            }
            console.log(b)
