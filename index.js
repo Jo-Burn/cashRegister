@@ -77,9 +77,10 @@ function mon(a) {
            b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]);
-           for(let i = 0; i < cid.length; i++) {
-            
-           }
-           return c * -1
+           c * -1
+           return low(c); 
            //console.log(b)
+}
+function low(a) {
+ console.log(`low works ${a}`)
 }
