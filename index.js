@@ -69,7 +69,7 @@ function round(a) {
 }
 function mon(a) {
   let b = [];
-  console.log(`mon works ${a}`);
+ // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
             b.push(count);            
