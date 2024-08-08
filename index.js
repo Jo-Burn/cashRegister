@@ -69,6 +69,14 @@ function round(a) {
 }
 function mon(a) {
   let b = [];
+  const max = ()=> {
+    let a = [];
+    for(let i = 0; i < cid.length; i++) {
+      a += cid[i][1];
+    }
+    return a
+  }
+  console.log(max)
  // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
