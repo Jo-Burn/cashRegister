@@ -52,7 +52,7 @@ function check() {
         }
         if(v <= 0) {
           mon(v);
-          out.innerHTML = `Status: Open[${test}]`
+          out.innerHTML = `Status: Open[${mon(v)}]`
         }
         //return mon(round(z))
       }
@@ -80,5 +80,6 @@ function mon(a) {
            for(let i = 0; i < cid.length; i++) {
             
            }
+           return c * -1
            //console.log(b)
 }
