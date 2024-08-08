@@ -82,5 +82,14 @@ function mon(a) {
            //console.log(b)
 }
 function low(a) {
+  let b = [];
  console.log(`low works ${a}`)
+ for(let i = 0; i < cid.length; i++) {
+  if(a <= 0) {
+   
+  }
+  break
+ }
+ 
+ return 1;
 }
