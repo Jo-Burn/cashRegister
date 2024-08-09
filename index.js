@@ -70,9 +70,9 @@ function round(a) {
 function mon(a) {
   let b = [];
   const max = ()=> {
-    let c = cid.sort(function(a, b){return a - b});
-    c.reverse()
-    return c[0];
+    let c = cid.sort(function(a, b){return a - b}).reverse();
+    
+    return c;
   }
   console.log(max())
  // console.log(`mon works ${a}`);
