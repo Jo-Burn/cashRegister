@@ -74,7 +74,7 @@ function mon(a) {
     
     return c;
   }
-  console.log(max())
+  console.log(max)
  // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
