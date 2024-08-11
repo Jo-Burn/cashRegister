@@ -70,11 +70,17 @@ function round(a) {
 function mon(a) {
   let b = [];
   const max = ()=> {
-    let c = cid.sort(function(a, b){return a - b}).reverse();
-    
-    return c;
+   // let c = cid.sort(function(a, b){return a - b}).reverse();
+    let f = 0;
+    for(let i = 0; i < cid.length; i++) {
+      if(cid[i][1] > f) {
+        delete f[0]
+        f.push(cid[i][1])
+      }
+    }
+    return f;
   }
-  console.log(max)
+  console.log(max())
  // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
