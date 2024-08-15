@@ -19,7 +19,7 @@ const max = ()=> {
   let c = cid;
   c.sort(function(a, b){return a - b});
   c.reverse()
-  return c[0];
+  return c[0][1];
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
 console.log(max())
