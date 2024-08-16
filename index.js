@@ -16,10 +16,15 @@ let cid = [
   ['ONE HUNDRED', 100]
 ];
 const max = ()=> {
-  let c = cid;
-  c.sort(function(a, b){return a - b});
-  c.reverse()
-  return c[0][1];
+  let c = 0;
+  for(let i = 0; i < cid.length; i++) {
+    if(cid[i][1] > c) {
+      c = cid[i][1]
+    }
+  }
+ // c.sort(function(a, b){return a - b});
+ // c.reverse()
+  return c;
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
 console.log(max())
