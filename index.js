@@ -27,8 +27,6 @@ const max = ()=> {
   return c;
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
-console.log(max())
-console.log(max())
 function check() {
     cash
     let z = cash.value;
@@ -108,5 +106,3 @@ function low(a) {
  
  return 1;
 }
-console.log(max())
-console.log(max())
