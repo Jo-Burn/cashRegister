@@ -88,7 +88,7 @@ function mon(a) {
            b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
-           console.log(`mon ${c}`)
+          // console.log(`mon ${c}`)
            return low(c); 
 }
 function low(a) {
