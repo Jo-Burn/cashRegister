@@ -80,8 +80,6 @@ function round(a) {
 }
 function mon(a) {
   let b = [];
-  
-  console.log(max())
  // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
@@ -92,13 +90,12 @@ function mon(a) {
            let c = round(b[0]);
            c * -1
            return low(c); 
-           //console.log(b)
 }
 function low(a) {
   let b = [];
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
-  if(a <= 0) {
+if(a <= 0) {
    
   }
   break
