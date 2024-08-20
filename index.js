@@ -92,12 +92,24 @@ function mon(a) {
            return low(c); 
 }
 function low(a) {
-  let b = 0;
+  let b = a;
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
-  if(a <= 0) {
-   
+  for(let j = 0; j < cid.length; j++) {
+    if(a != cid[j][1] || b != cid[j][1]) {
+     a++
+     b--
+    }
+    if(a == cid[j][1]) {
+      console.log(`A worked ${a}`)
+      break
+    } 
+    if(b == cid[j][1]) {
+      console.log(`B worked ${b}`)
+      break
+    }
   }
+  
   break
  }
  
