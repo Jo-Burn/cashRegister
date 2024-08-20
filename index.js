@@ -87,15 +87,15 @@ function mon(a) {
            }
            b.sort(function(a, b){return a - b})
            b.reverse();
-           let c = round(b[0]);
-           c * -1
+           let c = round(b[0]) * -1;
+           console.log(`mon ${c}`)
            return low(c); 
 }
 function low(a) {
-  let b = [];
+  let b = 0;
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
-if(a <= 0) {
+  if(a <= 0) {
    
   }
   break
