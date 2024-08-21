@@ -96,15 +96,16 @@ function low(a) {
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
   for(let j = 0; j < cid.length; j++) {
-    if(a != cid[j][1] || b != cid[j][1]) {
-     a++
-     b--
+    if(round(a) != cid[j][1] || round(b) != cid[j][1]) {
+      console.log(round(a))
+     a += .01
+     b -= .01
     }
-    if(a == cid[j][1]) {
+    if(round(a) == cid[j][1]) {
       console.log(`A worked ${a}`)
       break
     } 
-    if(b == cid[j][1]) {
+    if(round(b) == cid[j][1]) {
       console.log(`B worked ${b}`)
       break
     }
