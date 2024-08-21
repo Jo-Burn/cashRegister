@@ -95,8 +95,8 @@ function low(a) {
   let b = a;
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
-  for(let j = 0; j < cid.length; j++) {
-    if(round(a) != cid[j][1] || round(b) != cid[j][1]) {
+  while(round(a) != cid[j][1] || round(b) != cid[j][1]) {
+    if(a) {
       console.log(round(a))
      a += .01
      b -= .01
@@ -110,7 +110,6 @@ function low(a) {
       break
     }
   }
-  
  }
  
  return 1;
