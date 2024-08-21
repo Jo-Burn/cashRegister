@@ -110,7 +110,6 @@ function low(a) {
     }
   }
   
-  break
  }
  
  return 1;
