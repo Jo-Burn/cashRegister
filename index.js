@@ -27,6 +27,8 @@ const max = ()=> {
   return c;
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
+//Check tells whether there is enough cash in the register(cid)
+//and sends it to mon() to determine how much cash to return 
 function check() {
     cash
     let z = cash.value;
@@ -71,13 +73,16 @@ function check() {
       out.innerHTML = "no"
     }
 } 
+// a - b, Basically 
 function mathSub(a, b) {
   let c = a -= b;
   return c
 }
+//Rounds a number to the nearest .01
 function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
+
 function mon(a) {
   let b = [];
  // console.log(`mon works ${a}`);
@@ -88,14 +93,15 @@ function mon(a) {
            b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
+           console.log(b)
           // console.log(`mon ${c}`)
-           return low(c); 
+           return console.log(c)//low(c); 
 }
 function low(a) {
   let b = a;
  console.log(`low works ${a}`)
  for(let i = 0; i < cid.length; i++) {
-  while(round(a) != cid[j][1] || round(b) != cid[j][1]) {
+  while(a !== cid[i][1]) {
     if(a) {
       console.log(round(a))
      a += .01
