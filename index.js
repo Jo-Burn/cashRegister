@@ -62,8 +62,8 @@ function check() {
           
         }
         if(v <= 0) {
-          mon(v);
-          out.innerHTML = `Status: Open[${mon(v)}]`
+          value(v);
+          out.innerHTML = `Status: Open[${value(v)}]`
         }
         //return mon(round(z))
       }
@@ -87,11 +87,10 @@ function mon(a) {
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
             if(count < 0) {
-              b.push(count * -1)
+              b.push(count)
             } else {
               b.push(count);
-            }
-                        
+            }    
            }
            
            /*b.sort(function(a, b){return a - b})
@@ -99,7 +98,20 @@ function mon(a) {
            let c = round(b[0]) * -1;
            console.log(b)*/
           // console.log(`mon ${c}`)
-           return console.log(b)//low(c); 
+           return value(b); 
+}
+function value(a) {
+  let b = []
+  for(let i = a; i < max; i += .01) {
+    for(let j = 0; j < cid.length; j++) {
+      if(round(i) == cid[j]) {
+       b = cid[j]
+       break
+      }
+    }
+    
+  }
+  console.log(`Value ${b}`)
 }
 //Don't ask me, idk yet
 function low(a) {
