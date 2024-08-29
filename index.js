@@ -86,14 +86,20 @@ function mon(a) {
  // console.log(`mon works ${a}`);
           for(let i = 0; i < cid.length; i++) {
             let count = mathSub(a, cid[i][1]);
-            b.push(count);            
+            if(count < 0) {
+              b.push(count * -1)
+            } else {
+              b.push(count);
+            }
+                        
            }
-           b.sort(function(a, b){return a - b})
+           
+           /*b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
-           console.log(b)
+           console.log(b)*/
           // console.log(`mon ${c}`)
-           return console.log(c)//low(c); 
+           return console.log(b)//low(c); 
 }
 //Don't ask me, idk yet
 function low(a) {
