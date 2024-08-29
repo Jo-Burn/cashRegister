@@ -22,8 +22,6 @@ const max = ()=> {
       c = cid[i][1]
     }
   }
- // c.sort(function(a, b){return a - b});
- // c.reverse()
   return c;
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
@@ -82,7 +80,7 @@ function mathSub(a, b) {
 function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
-
+//Still trying to Figure it out
 function mon(a) {
   let b = [];
  // console.log(`mon works ${a}`);
@@ -97,6 +95,7 @@ function mon(a) {
           // console.log(`mon ${c}`)
            return console.log(c)//low(c); 
 }
+//Don't ask me, idk yet
 function low(a) {
   let b = a;
  console.log(`low works ${a}`)
