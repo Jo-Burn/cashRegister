@@ -13,7 +13,7 @@ const money = [
   ['TEN', 10],
   ['TWENTY', 20],
   ['ONE HUNDRED', 100]
-]
+];
 let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
