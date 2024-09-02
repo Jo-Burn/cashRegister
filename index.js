@@ -3,6 +3,17 @@ let click = document.getElementById('click');
 let out = document.getElementById('change-due');
 //let x = click.addEventListener('click', check());
 let test = [];
+const money = [
+  ['PENNY', 0.01],
+  ['NICKEL', 0.05],
+  ['DIME', 0.10],
+  ['QUARTER', 0.25],
+  ['ONE', 1],
+  ['FIVE', 5],
+  ['TEN', 10],
+  ['TWENTY', 20],
+  ['ONE HUNDRED', 100]
+]
 let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
