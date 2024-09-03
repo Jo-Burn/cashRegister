@@ -56,7 +56,7 @@ function check() {
             if(v >= 0) {
                 //mathSub(v, cid[i][1])
                 //console.log(v, cid[i][1])
-                v -= cid[i][1];                
+                mathSub(v, cid[i][1])               
                 test.push(cid[i][0])
                 test1.push(v)
                // console.log(test1)
@@ -149,3 +149,5 @@ function low(a) {
  
  return 1;
 }
+
+console.log(mathSub(-1, cid[2][1]))
