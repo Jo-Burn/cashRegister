@@ -154,5 +154,3 @@ function low(a) {
  
  return 1;
 }
-
-console.log(mathSub(cid[2][1], -2))
