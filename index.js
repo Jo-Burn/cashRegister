@@ -44,12 +44,13 @@ function check() {
     
     let test1 = []
     let count = 0;
+    if(z == price) {
+      out.innerHTML = `No change due - customer paid with exact cash`
+    }
     if(z >= price) {
       z = mathSub(z, price)
       let v = round(z)
       if(v > 0) {
-        // count is a safety measure
-        if(count != cid.length) {
           for(let i = 0; i < cid.length; i++) {
             
             if(v >= 0) {
@@ -66,7 +67,6 @@ function check() {
               break
             }
           }
-        }
         console.log('Finale', v)
         if(v >= 0) {
           out.innerHTML = "Status: INSUFFICIENT_FUNDS"
@@ -85,7 +85,7 @@ function check() {
 // a - b, Basically 
 function mathSub(a, b) {
   let c = a -= b;
-  return c
+  return round(c)
 }
 //Rounds a number to the nearest .01
 function round(a) {
@@ -103,13 +103,14 @@ function mon(a) {
               b.push(count);
             }    
            }
-           
+           console.log(`mon ${b}`)
            /*b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
            console.log(b)*/
           // console.log(`mon ${c}`)
-           return value(b); 
+           //return value(b); 
+           return low(b)
 }
 function value(a) {
   let b = []
@@ -122,7 +123,7 @@ function value(a) {
     }
     
   }
-  console.log(`Value ${b}`)
+  //console.log(`Value ${b}`)
 }
 //Don't ask me, idk yet
 function low(a) {
