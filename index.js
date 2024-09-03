@@ -84,7 +84,12 @@ function check() {
 } 
 // a - b, Basically 
 function mathSub(a, b) {
-  let c = a -= b;
+  let c = []
+  if(a < 0 || b < 0) {
+    c = a += b
+  } else {
+    c = a -= b
+  }
   return round(c)
 }
 //Rounds a number to the nearest .01
@@ -150,4 +155,4 @@ function low(a) {
  return 1;
 }
 
-console.log(mathSub(-1, cid[2][1]))
+console.log(mathSub(cid[2][1], -2))
