@@ -43,7 +43,7 @@ function check() {
     let z = cash.value;
     
     let test1 = []
-    let count = 0;
+    //let count = 0;
     if(z == price) {
       out.innerHTML = `No change due - customer paid with exact cash`
     }
@@ -61,7 +61,7 @@ function check() {
                 test1.push(v)
                // console.log(test1)
                //console.log(round(v))
-                count++
+                //count++
             } else {
               out.innerHTML = "Done";
               break
@@ -73,8 +73,8 @@ function check() {
           
         }
         if(v <= 0) {
-          value(v);
-          out.innerHTML = `Status: Open[${value(v)}]`
+          mon(v);
+          out.innerHTML = `Status: Open[${mon(v)}]`
         }
         //return mon(round(z))
       }
@@ -99,23 +99,10 @@ function round(a) {
 //Still trying to Figure it out
 function mon(a) {
   let b = [];
- // console.log(`mon works ${a}`);
-          for(let i = 0; i < cid.length; i++) {
-            let count = mathSub(a, cid[i][1]);
-            if(count < 0) {
-              b.push(count)
-            } else {
-              b.push(count);
-            }    
-           }
-           console.log(`mon ${b}`)
-           /*b.sort(function(a, b){return a - b})
-           b.reverse();
-           let c = round(b[0]) * -1;
-           console.log(b)*/
-          // console.log(`mon ${c}`)
-           //return value(b); 
-           return low(b)
+   for(let i = 0; i < money.length; i++) {
+    b = mathSub(a, money[i][1]);
+   }
+           return console.log(b)
 }
 function value(a) {
   let b = []
@@ -154,3 +141,8 @@ function low(a) {
  
  return 1;
 }
+
+/*b.sort(function(a, b){return a - b})
+           b.reverse();
+           let c = round(b[0]) * -1;
+           console.log(b)*/
