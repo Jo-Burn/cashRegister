@@ -99,14 +99,20 @@ function round(a) {
 //Still trying to Figure it out
 function mon(a) {
   let b = [];
-   while(a != 0) {
+   while(a !== 0) {
     for(let i = 1; i < money.length; i++) {
+      if(a == 0) {
+        console.log(`worked`)
+        break
+      }
       if(a < money[i][1]) {
         let c = money[i - 1]
-        mathSub(a, c[1])
-        console.log(a)
+        console.log(mathSub(a, c[1]))
+        console.log(`log ${a}`)
         b.push(c[0])
-        i = 1
+        if(a !== 0) {
+          i = 1
+        }        
       }
     }
    }
@@ -149,7 +155,7 @@ function low(a) {
  
  return 1;
 }
-//console.log(mon(10))
+console.log(mon(10))
 /*b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
