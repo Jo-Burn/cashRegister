@@ -68,13 +68,14 @@ function check() {
             }
           }
         console.log('Finale', v)
-        if(v >= 0) {
+        if(v <= 0) {
           out.innerHTML = "Status: INSUFFICIENT_FUNDS"
           
         }
-        if(v <= 0) {
+        if(v >= 0) {
           mon(v);
           out.innerHTML = `Status: Open[${mon(v)}]`
+          console.log(test)
         }
         //return mon(round(z))
       }
@@ -99,7 +100,6 @@ function round(a) {
 //Still trying to Figure it out
 function mon(a) {
   let b = [];
-   while(a !== 0) {
     for(let i = 1; i < money.length; i++) {
       if(a == 0) {
         console.log(`worked`)
@@ -115,7 +115,6 @@ function mon(a) {
         }        
       }
     }
-   }
            return console.log(b)
 }
 function value(a) {
@@ -155,7 +154,7 @@ function low(a) {
  
  return 1;
 }
-console.log(mon(10))
+//console.log(mon(10))
 /*b.sort(function(a, b){return a - b})
            b.reverse();
            let c = round(b[0]) * -1;
