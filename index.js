@@ -35,6 +35,13 @@ const max = ()=> {
   }
   return c;
 }
+const totalCash = ()=> {
+  let a = 0
+  for(let i = 0; i < cid.length; i++) {
+   a += cid[i][1];
+  }
+  return round(a)
+}
 console.log(`Welcome to My Website, Hope you enjoy <3`)
 //Check tells whether there is enough cash in the register(cid)
 //and sends it to mon() to determine how much cash to return 
@@ -50,8 +57,9 @@ function check() {
     if(z >= price) {
       z = mathSub(z, price)
       let v = round(z)
-      if(v > 0) {
-          for(let i = 0; i < cid.length; i++) {
+      if(v > 0 && v < totalCash) {
+
+          /*for(let i = 0; i < cid.length; i++) {
             
             if(v >= 0) {
                 //mathSub(v, cid[i][1])
@@ -65,22 +73,24 @@ function check() {
             } else {
               out.innerHTML = "Done";
               break
-            }
-          }
+            } 
+          }*/
         console.log('Finale', v)
         if(v <= 0) {
-          out.innerHTML = "Status: INSUFFICIENT_FUNDS"
+          
           
         }
         if(v >= 0) {
-          mon(v);
-          out.innerHTML = `Status: Open[${mon(v)}]`
+         // mon(v);
+          out.innerHTML = `Status: Open[${v}]`
           console.log(test)
         }
         //return mon(round(z))
       }
+    } else if(z > totalCash) {
+      out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
-      out.innerHTML = "no"
+      out.innerHTML = `No`
     }
 } 
 // a - b, Basically 
