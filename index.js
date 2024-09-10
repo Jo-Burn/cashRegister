@@ -54,10 +54,10 @@ function check() {
     if(z == price) {
       out.innerHTML = `No change due - customer paid with exact cash`
     }
-    if(z >= price) {
+    if(z >= price && z < totalCash()) {
       z = mathSub(z, price)
       let v = round(z)
-      if(v > 0 && v < totalCash) {
+      if(v > 0 && v < totalCash()) {
 
           /*for(let i = 0; i < cid.length; i++) {
             
@@ -87,7 +87,7 @@ function check() {
         }
         //return mon(round(z))
       }
-    } else if(z > totalCash) {
+    } else if(z > totalCash()) {
       out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
       out.innerHTML = `No`
