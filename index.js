@@ -58,28 +58,8 @@ function check() {
       z = mathSub(z, price)
       let v = round(z)
       if(v > 0 && v < totalCash()) {
-
-          /*for(let i = 0; i < cid.length; i++) {
-            
-            if(v >= 0) {
-                //mathSub(v, cid[i][1])
-                //console.log(v, cid[i][1])
-                mathSub(v, cid[i][1])               
-                test.push(cid[i][0])
-                test1.push(v)
-               // console.log(test1)
-               //console.log(round(v))
-                //count++
-            } else {
-              out.innerHTML = "Done";
-              break
-            } 
-          }*/
         console.log('Finale', v)
-        if(v <= 0) {
-          
-          
-        }
+
         if(v >= 0) {
          // mon(v);
           out.innerHTML = `Status: Open[${v}]`
@@ -90,7 +70,7 @@ function check() {
     } else if(z > totalCash()) {
       out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
-      out.innerHTML = `No`
+      window.alert("Costumer can not buy this Item")
     }
 } 
 // a - b, Basically 
