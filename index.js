@@ -62,7 +62,7 @@ function check() {
 
         if(v >= 0) {
          // mon(v);
-          out.innerHTML = `Status: Open[${v}]`
+          out.innerHTML = `Status: Open[${mon(v)}]`
           console.log(test)
         }
         //return mon(round(z))
@@ -91,19 +91,20 @@ function round(a) {
 function mon(a) {
   let b = [];
     for(let i = 1; i < money.length; i++) {
-      if(a == 0) {
-        console.log(`worked`)
-        break
+      if(a !== 0) {
+        if(a < money[i][1]) {
+          let c = money[i - 1]
+          console.log(mathSub(a, c[1]))
+          console.log(`log ${a}`)
+          b.push(c[0])
+          if(a !== 0) {
+            i = 1
+          }        
+        }
+      } else {
+        return console.log(b)
       }
-      if(a < money[i][1]) {
-        let c = money[i - 1]
-        console.log(mathSub(a, c[1]))
-        console.log(`log ${a}`)
-        b.push(c[0])
-        if(a !== 0) {
-          i = 1
-        }        
-      }
+      
     }
            return console.log(b)
 }
