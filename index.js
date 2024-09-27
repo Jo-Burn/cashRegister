@@ -52,7 +52,7 @@ function check() {
     let test1 = []
     //let count = 0;
     if(z == price) {
-      out.innerHTML = `No change due - customer paid with exact cash`
+      return out.innerHTML = `No change due - customer paid with exact cash`
     }
     if(z >= price && z < totalCash()) {
       z = mathSub(z, price)
@@ -91,18 +91,20 @@ function round(a) {
 function mon(a) {
   let b = [];
     for(let i = 1; i < money.length; i++) {
-      if(a !== 0) {
-        if(a < money[i][1]) {
+      if(a > 0) {
+        if(money[i][1] > a) {
           let c = money[i - 1]
-          console.log(mathSub(a, c[1]))
+          let d = i--
+          console.log(mathSub(a, money[d][1]))
           console.log(`log ${a}`)
           b.push(c[0])
-          if(a !== 0) {
+          if(a !== 0 && a > 0) {
             i = 1
           }        
         }
       } else {
-        return console.log(b)
+         console.log(b)
+         break
       }
       
     }
