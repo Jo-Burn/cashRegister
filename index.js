@@ -93,14 +93,12 @@ function mon(a) {
     for(let i = 1; i < money.length; i++) {
       if(a > 0) {
         if(money[i][1] > a) {
-          let c = money[i - 1]
           let d = mathSub(i, 1)
           console.log(mathSub(a, money[d][1]))
           console.log(`log ${a}`)
-          b.push(c[0])
-          if(a !== 0 && a > 0) {
-            i = 1
-          }        
+          b.push(money[d][1])
+          i == 1;
+          continue    
         }
       } else {
          console.log(b)
