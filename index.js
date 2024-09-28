@@ -94,7 +94,7 @@ function mon(a) {
       if(a > 0) {
         if(money[i][1] > a) {
           let c = money[i - 1]
-          let d = i--
+          let d = mathSub(i, 1)
           console.log(mathSub(a, money[d][1]))
           console.log(`log ${a}`)
           b.push(c[0])
