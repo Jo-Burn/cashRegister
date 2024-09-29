@@ -89,15 +89,20 @@ function round(a) {
 }
 //Still trying to Figure it out
 function mon(a) {
+  let x = [];
+  x = a;
   let b = [];
     for(let i = 1; i < money.length; i++) {
-      if(a > 0) {
-        if(money[i][1] > a) {
+      console.log(`log ${i}`)
+      if(x > 0) {
+        if(money[i][1] > x) {
           let d = mathSub(i, 1)
-          console.log(mathSub(a, money[d][1]))
-          console.log(`log ${a}`)
+          let y = mathSub(x, money[d][1])
+          console.log(y)
+         // console.log(`log ${x}`)
           b.push(money[d][1])
-          i == 1;
+          x = y
+          i = 1;
           continue    
         }
       } else {
