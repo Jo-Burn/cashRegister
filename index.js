@@ -101,7 +101,7 @@ function mon(a) {
           console.log(y)
          // console.log(`log ${x}`)
           b.push(money[d][1])
-          x = y
+          x = this.y
           i = 1;
           continue    
         }
