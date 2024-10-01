@@ -63,7 +63,7 @@ function check() {
         if(v >= 0) {
          // mon(v);
           out.innerHTML = `Status: Open[${mon(v)}]`
-          console.log(test)
+         // console.log(test)
         }
         //return mon(round(z))
       }
@@ -97,13 +97,14 @@ function mon(a) {
       if(x > 0) {
         if(money[i][1] > x) {
           let d = mathSub(i, 1)
+          console.log(x, money[d][1], `this`)
           let y = mathSub(x, money[d][1])
           console.log(y)
          // console.log(`log ${x}`)
           b.push(money[d][1])
           x = this.y
           i = 1;
-          continue    
+         // continue    
         }
       } else {
          console.log(b)
@@ -111,7 +112,7 @@ function mon(a) {
       }
       
     }
-           return console.log(b)
+           return b.value
 }
 function value(a) {
   let b = []
