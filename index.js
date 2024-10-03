@@ -89,12 +89,12 @@ function round(a) {
 }
 //Still trying to Figure it out
 function mon(a) {
-  let x = [];
+  let x = [] /*x will = a*/;
   x = a;
   let b = [];
     for(let i = 1; i < money.length; i++) {
       console.log(`log ${i}`)
-      if(x > 0) {
+      if(x > 0.00) {
         if(money[i][1] > x) {
           let d = mathSub(i, 1)
           console.log(x, money[d][1], `this`)
@@ -103,7 +103,7 @@ function mon(a) {
          // console.log(`log ${x}`)
           b.push(money[d][1])
           x = this.y
-          i = 1;
+          i = 0;
          // continue    
         }
       } else {
