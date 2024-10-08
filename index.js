@@ -94,7 +94,7 @@ function mon(a) {
   let b = [];
     for(let i = 1; i < money.length; i++) {
       console.log(`log ${i}`)
-      if(x > 0.00) {
+      if(x !== 0.00) {
         if(money[i][1] > x) {
           let d = mathSub(i, 1)
           console.log(x, money[d][1], `this`)
