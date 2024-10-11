@@ -94,19 +94,21 @@ function mon(a) {
   let b = [];
     for(let i = 1; i < money.length; i++) {
       console.log(`log ${i}`)
-      if(x !== 0.00) {
+      if(x != 0 && x > 0) {
         if(money[i][1] > x) {
           let d = mathSub(i, 1)
           console.log(x, money[d][1], `this`)
-          let y = mathSub(x, money[d][1])
-          console.log(y)
+         // const y = mathSub(x, money[d][1])
+         // console.log(y)
          // console.log(`log ${x}`)
           b.push(money[d][1])
-          x = this.y
-          i = 0;
-         // continue    
+          x = this.mathSub(x, money[d][1]);
+          i = 1;
+          //console.log(x)
+          //continue    
         }
       } else {
+        console.log(`final ${x}`)
          console.log(b)
          break
       }
