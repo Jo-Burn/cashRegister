@@ -3,6 +3,15 @@ let click = document.getElementById('click');
 let out = document.getElementById('change-due');
 //let x = click.addEventListener('click', check());
 let test = [];
+const max = ()=> {
+  let c = 0;
+  for(let i = 0; i < cid.length; i++) {
+    if(cid[i][1] > c) {
+      c = cid[i][1]
+    }
+  }
+  return c;
+}
 const money = [
   ['PENNY', 0.01],
   ['NICKEL', 0.05],
@@ -26,15 +35,7 @@ let cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-const max = ()=> {
-  let c = 0;
-  for(let i = 0; i < cid.length; i++) {
-    if(cid[i][1] > c) {
-      c = cid[i][1]
-    }
-  }
-  return c;
-}
+
 const totalCash = ()=> {
   let a = 0
   for(let i = 0; i < cid.length; i++) {
@@ -92,7 +93,7 @@ function mon(a) {
   let x = [] /*x will = a*/;
   x = a;
   let b = [];
-    for(let i = 1; i < money.length; i++) {
+    for(let i = 0; i < money.length; i++) {
       console.log(`log ${i}`)
       if(x != 0 && x > 0) {
         if(money[i][1] > x) {
@@ -103,9 +104,12 @@ function mon(a) {
          // console.log(`log ${x}`)
           b.push(money[d][1])
           x = this.mathSub(x, money[d][1]);
-          i = 1;
+          i = 0;
           //console.log(x)
           //continue    
+        } if(x > max()) {
+         console.log(x = this.mathSub(x, max()));
+         b.push(max())
         }
       } else {
         console.log(`final ${x}`)
