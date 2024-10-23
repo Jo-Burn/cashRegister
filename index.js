@@ -118,20 +118,20 @@ function mon(a) {
       }
       
     }
-           return b.value
+           return value(b);
 }
 function value(a) {
-  let b = []
-  for(let i = a; i < max; i += .01) {
-    for(let j = 0; j < cid.length; j++) {
-      if(round(i) == cid[j]) {
-       b = cid[j]
-       break
-      }
+ let b = []
+ for(let i = 0; i < a.length; i++) {
+  for(let j = 0; j < money.length; j++) {
+   if(b.includes(a[i]) == false) {
+    if(a[i] == money[j][1]) {
+      b.push(money[j]);
+      console.log(b, 'this is B')
     }
-    
+   }
   }
-  //console.log(`Value ${b}`)
+ }
 }
 //Don't ask me, idk yet
 function low(a) {
