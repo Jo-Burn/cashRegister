@@ -126,12 +126,23 @@ function value(a) {
   for(let j = 0; j < money.length; j++) {
    if(b.includes(a[i]) == false) {
     if(a[i] == money[j][1]) {
-      b.push(money[j]);
-      console.log(b, 'this is B')
+      if(b.includes(money[j][1]) == false) {
+        b.push(money[j]);
+      }
+       else if(b.includes(money[j]) == true) {
+        console.log('test')
+        for(let x = 0; x < b.length; x++) {
+          if(b[x][0] == money[j][0]) {
+            b[x].push(money[j][1])
+          }
+        }
+      }
     }
    }
   }
  }
+ console.log(b, 'this is B')
+ return b
 }
 //Don't ask me, idk yet
 function low(a) {
