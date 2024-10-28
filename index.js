@@ -124,20 +124,22 @@ function value(a) {
  let b = []
  for(let i = 0; i < a.length; i++) {
   for(let j = 0; j < money.length; j++) {
-   if(b.includes(a[i]) == false) {
-    if(a[i] == money[j][1]) {
-      if(b.includes(money[j][1]) == false) {
-        b.push(money[j]);
-      }
-       else if(b.includes(money[j]) == true) {
-        console.log('test')
-        for(let x = 0; x < b.length; x++) {
-          if(b[x][0] == money[j][0]) {
-            b[x].push(money[j][1])
+   for(let w = 0; w < b.length; w++) {
+    if(b[w].includes(a[i]) == false) {
+      if(a[i] == money[j][1]) {
+        if(b[w].includes(money[j][1]) == false) {
+          b.push(money[j]);
+        }
+         else if(b[w].includes(money[j]) == true) {
+          console.log('test')
+          for(let x = 0; x < b.length; x++) {
+            if(b[x][0] == money[j][0]) {
+              b[x].push(money[j][1])
+            }
           }
         }
       }
-    }
+     }
    }
   }
  }
@@ -168,6 +170,7 @@ function low(a) {
  
  return 1;
 }
+//console.log(money[0].includes(0.01));
 //console.log(mon(10))
 /*b.sort(function(a, b){return a - b})
            b.reverse();
