@@ -88,17 +88,17 @@ function mathSub(a, b) {
 function round(a) {
  return Math.round((a + Number.EPSILON) * 100) / 100;
 }
-//Still trying to Figure it out
+//Separates the inputted number into the corresponding amounts, 0.06 == .05 && .01
 function mon(a) {
   let x = [] /*x will = a*/;
   x = a;
   let b = [];
     for(let i = 0; i < money.length; i++) {
-      console.log(`log ${i}`)
+     // console.log(`log ${i}`)
       if(x != 0 && x > 0) {
         if(money[i][1] > x) {
           let d = mathSub(i, 1)
-          console.log(x, money[d][1], `this`)
+          //console.log(x, money[d][1], `this`)
          // const y = mathSub(x, money[d][1])
          // console.log(y)
          // console.log(`log ${x}`)
@@ -108,7 +108,7 @@ function mon(a) {
           //console.log(x)
           //continue    
         } if(x > max()) {
-         console.log(x = this.mathSub(x, max()));
+         //console.log(x = this.mathSub(x, max()));
          b.push(max())
         }
       } else {
@@ -120,55 +120,35 @@ function mon(a) {
     }
            return value(b);
 }
+//organizes the array from mon, including the amount from money
 function value(a) {
  let b = []
  for(let i = 0; i < a.length; i++) {
   for(let j = 0; j < money.length; j++) {
-   for(let w = 0; w < b.length; w++) {
-    if(b[w].includes(a[i]) == false) {
+    if(b.includes(a[i]) == false) {
+    //  console.log('this')
       if(a[i] == money[j][1]) {
-        if(b[w].includes(money[j][1]) == false) {
+        if(b.includes(money[j][1]) == false) {
           b.push(money[j]);
         }
-         else if(b[w].includes(money[j]) == true) {
-          console.log('test')
-          for(let x = 0; x < b.length; x++) {
-            if(b[x][0] == money[j][0]) {
-              b[x].push(money[j][1])
+         if(b.includes(money[j]) == true) {
+         // console.log('test')
+            if(b == money[j][0]) {
+              b.push(money[j][1])
             }
-          }
+          
         }
       }
      }
-   }
+   
   }
  }
- console.log(b, 'this is B')
- return b
+ //console.log(b, 'this is B')
+ return low(b)
 }
 //Don't ask me, idk yet
 function low(a) {
-  let b = a;
- console.log(`low works ${a}`)
- for(let i = 0; i < cid.length; i++) {
-  while(a !== cid[i][1]) {
-    if(a) {
-      console.log(round(a))
-     a += .01
-     b -= .01
-    }
-    if(round(a) == cid[j][1]) {
-      console.log(`A worked ${a}`)
-      break
-    } 
-    if(round(b) == cid[j][1]) {
-      console.log(`B worked ${b}`)
-      break
-    }
-  }
- }
- 
- return 1;
+  console.log(`low ${a}`)
 }
 //console.log(money[0].includes(0.01));
 //console.log(mon(10))
