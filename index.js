@@ -21,6 +21,7 @@ const money = [
   ['FIVE', 5],
   ['TEN', 10],
   ['TWENTY', 20],
+  ['FIFTY', 20],
   ['ONE HUNDRED', 100]
 ];
 let price = 1.87;
@@ -148,7 +149,23 @@ function value(a) {
 }
 //Don't ask me, idk yet
 function low(a) {
-  console.log(`low ${a}`)
+  //console.log(`low ${a}`)
+  let b = [];
+  for(let i = 0; i < a.length; i++) {
+    let count = 0;
+    for(let j = 0; j < a.length; j++) {
+      if(a[i] == a[j]) {
+        count++
+      }
+    }
+    if(count !== 0) {
+     b.push(a[i][0] && a[i][1] * count)
+     i += count--
+    } else {
+      b.push(a[i]);
+    }
+  }
+  return b
 }
 //console.log(money[0].includes(0.01));
 //console.log(mon(10))
