@@ -21,7 +21,6 @@ const money = [
   ['FIVE', 5],
   ['TEN', 10],
   ['TWENTY', 20],
-  ['FIFTY', 20],
   ['ONE HUNDRED', 100]
 ];
 let price = 1.87;
@@ -45,6 +44,27 @@ const totalCash = ()=> {
   return round(a)
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
+window.onload = createTable(cid);
+function createTable(tableData) {
+  var table = document.createElement('table');
+  var tableBody = document.createElement('tbody');
+
+  tableData.forEach(function(rowData) {
+    var row = document.createElement('tr');
+
+    rowData.forEach(function(cellData) {
+      var cell = document.createElement('td');
+      cell.appendChild(document.createTextNode(cellData));
+      row.appendChild(cell);
+    });
+
+    tableBody.appendChild(row);
+  });
+
+  table.appendChild(tableBody);
+  document.body.appendChild(table);
+}
+
 //Check tells whether there is enough cash in the register(cid)
 //and sends it to mon() to determine how much cash to return 
 function check() {
@@ -103,8 +123,17 @@ function mon(a) {
          // const y = mathSub(x, money[d][1])
          // console.log(y)
          // console.log(`log ${x}`)
+         if(money[d][1] < cid[d][1]) {
           b.push(money[d][1])
+          cid[d][1] = mathSub(cid[d][1], money[d][1])
           x = this.mathSub(x, money[d][1]);
+         } else {
+          d = mathSub(i, 2);
+          b.push(money[d][1])
+          cid[d][1] = mathSub(cid[d][1], money[d][1])
+          x = this.mathSub(x, money[d][1]);
+
+         }
           i = 0;
           //console.log(x)
           //continue    
@@ -113,16 +142,19 @@ function mon(a) {
          b.push(max())
         }
       } else {
-        console.log(`final ${x}`)
+        //console.log(`final ${x}`)
          console.log(b)
          break
       }
       
     }
-           return value(b);
+    createTable(cid)
+    return b
+           //return value(b);
 }
 //organizes the array from mon, including the amount from money
 function value(a) {
+ //console.log(`this ${a}`)
  let b = []
  for(let i = 0; i < a.length; i++) {
   for(let j = 0; j < money.length; j++) {
@@ -149,18 +181,19 @@ function value(a) {
 }
 //Don't ask me, idk yet
 function low(a) {
-  //console.log(`low ${a}`)
+  console.log(`low ${a}`)
   let b = [];
   for(let i = 0; i < a.length; i++) {
     let count = 0;
+    let c = mathSub(i, 1);
     for(let j = 0; j < a.length; j++) {
-      if(a[i] == a[j]) {
+      if(a[i] == a[j] && a[i] !== a[c]) {
         count++
       }
     }
     if(count !== 0) {
      b.push(a[i][0] && a[i][1] * count)
-     i += count--
+    // i += count--
     } else {
       b.push(a[i]);
     }
