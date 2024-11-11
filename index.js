@@ -44,27 +44,13 @@ const totalCash = ()=> {
   return round(a)
 }
 console.log(`Welcome to My Website, Hope you enjoy <3`)
-window.onload = createTable(cid);
-function createTable(tableData) {
-  var table = document.createElement('table');
-  var tableBody = document.createElement('tbody');
-
-  tableData.forEach(function(rowData) {
-    var row = document.createElement('tr');
-
-    rowData.forEach(function(cellData) {
-      var cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(cellData));
-      row.appendChild(cell);
-    });
-
-    tableBody.appendChild(row);
-  });
-
-  table.appendChild(tableBody);
-  document.body.appendChild(table);
+window.onload = table
+function table() {
+  for(let i = 0; i < cid.length; i++) {
+    let a = document.getElementById(`table${i}`)
+    a.innerHTML = cid[i][1]
+  }
 }
-
 //Check tells whether there is enough cash in the register(cid)
 //and sends it to mon() to determine how much cash to return 
 function check() {
@@ -148,7 +134,7 @@ function mon(a) {
       }
       
     }
-    createTable(cid)
+    table(b)
     return b
            //return value(b);
 }
