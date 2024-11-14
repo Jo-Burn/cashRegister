@@ -5,9 +5,9 @@ let out = document.getElementById('change-due');
 let test = [];
 const max = ()=> {
   let c = 0;
-  for(let i = 0; i < cid.length; i++) {
-    if(cid[i][1] > c) {
-      c = cid[i][1]
+  for(let i = 0; i < money.length; i++) {
+    if(money[i][1] > c) {
+      c = money[i][1], i
     }
   }
   return c;
@@ -123,9 +123,12 @@ function mon(a) {
           i = 0;
           //console.log(x)
           //continue    
-        } if(x > max()) {
+        } if(x >= max[0]) {
          //console.log(x = this.mathSub(x, max()));
-         b.push(max())
+         if(max[0] <= cid[max[1]][1]) {
+          b.push(max[0])
+          cid[max[1]][1] = mathSub(max[0], cid[max[1]][1]) 
+         }
         }
       } else {
         //console.log(`final ${x}`)
