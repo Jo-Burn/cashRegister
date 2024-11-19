@@ -7,7 +7,7 @@ const max = ()=> {
   let c = 0;
   for(let i = 0; i < money.length; i++) {
     if(money[i][1] > c) {
-      c = money[i][1], i
+      c = money[i][1]
     }
   }
   return c;
@@ -123,12 +123,14 @@ function mon(a) {
           i = 0;
           //console.log(x)
           //continue    
-        } if(x >= max[0]) {
+        } if(x >= max()) {
+          let a = mathSub(cid.length, 1);
          //console.log(x = this.mathSub(x, max()));
-         if(max[0] <= cid[max[1]][1]) {
-          b.push(max[0])
-          cid[max[1]][1] = mathSub(max[0], cid[max[1]][1]) 
-         }
+           if(max() <= cid[a][1]) {
+           b.push(max())
+           cid[a][1] = mathSub(max(), cid[a][1]) 
+           x = this.mathSub(x, cid[a][1])
+           }
         }
       } else {
         //console.log(`final ${x}`)
