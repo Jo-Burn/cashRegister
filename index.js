@@ -134,9 +134,32 @@ function mon(a) {
            }
            if(max() > cid[d][1]) {
             b.push(cid[d][1])
-            x = this.mathSub(x, cid[d][1])
+            x = this.mathSub(x, cid[d][1]);
             cid[d][1] = 0;
-            
+            //start
+            if(x >= max() && cid[d][1] == 0) {
+             for(let j = 0; j < money.length; j++) {
+              if(x >= max()) {
+                if(money[j][1] >= x) {
+                  if(money[j][1] >= x) {
+                    let q = mathSub(j, 1)
+                   if(money[q][1] <= cid[q][1]) {
+                    b.push(money[q][1])
+                    cid[q][1] = mathSub(cid[q][1], money[q][1])
+                    x = this.mathSub(x, money[q][1]);
+                   } else {
+                    q = mathSub(i, 2);
+                    b.push(money[q][1])
+                    cid[q][1] = mathSub(cid[q][1], money[q][1])
+                    x = this.mathSub(x, money[q][1]);
+          
+                   }
+                    j = 0;
+                  }
+                }
+              }
+             }
+            }            
            }
         }
       } else {
