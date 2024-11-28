@@ -148,7 +148,7 @@ function mon(a) {
                     cid[q][1] = mathSub(cid[q][1], money[q][1])
                     x = this.mathSub(x, money[q][1]);
                    } else {
-                    q = mathSub(i, 2);
+                    q = mathSub(j, 2);
                     b.push(money[q][1])
                     cid[q][1] = mathSub(cid[q][1], money[q][1])
                     x = this.mathSub(x, money[q][1]);
