@@ -103,13 +103,13 @@ function mon(a) {
     for(let i = 0; i < money.length; i++) {
      // console.log(`log ${i}`)
       if(x != 0 && x >= 0) {
-        if(money[i][1] >= x) {
+        if(money[i][1] > x) {
           let d = mathSub(i, 1)
           //console.log(x, money[d][1], `this`)
          // const y = mathSub(x, money[d][1])
          // console.log(y)
          // console.log(`log ${x}`)
-         if(money[d][1] <= cid[d][1]) {
+         if(money[d][1] < cid[d][1]) {
           b.push(money[d][1])
           cid[d][1] = mathSub(cid[d][1], money[d][1])
           x = this.mathSub(x, money[d][1]);
@@ -123,7 +123,9 @@ function mon(a) {
           i = 0;
           //console.log(x)
           //continue    
-        } if(x >= max()) {
+        }
+        
+        if(x >= max()) {
           let d = mathSub(cid.length, 1);
          //console.log(x = this.mathSub(x, max()));
            if(max() <= cid[d][1]) {
@@ -133,7 +135,15 @@ function mon(a) {
           // console.log(x)
            }
            if(max() > cid[d][1]) {
-            b.push(cid[d][1])
+            let count = mathSub(cid.length, 1);
+            while(x > 0 && count !== 0) {
+             //let cidLess = mathSub(cid.length, count);
+             x = mathSub(x, money[count][1]);
+             let div = cid[count][1] % money[count][1]
+             b.push(div)
+             count--;
+            }
+           /* b.push(cid[d][1])
             x = this.mathSub(x, cid[d][1]);
             cid[d][1] = 0;
             //start
@@ -155,11 +165,13 @@ function mon(a) {
           
                    }
                     j = 0;
+
+                    
                   }
                 }
               }
              }
-            }            
+            }*/            
            }
         }
       } else {
