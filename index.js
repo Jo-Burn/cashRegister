@@ -35,7 +35,6 @@ let cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-
 const totalCash = ()=> {
   let a = 0
   for(let i = 0; i < cid.length; i++) {
@@ -69,8 +68,13 @@ function check() {
         console.log('Finale', v)
 
         if(v >= 0) {
-         // mon(v);
+         low(v);
+        /* if(v > max()) {
+          out.innerHTML = `Status: Open[${recuse(v, 0, 0)}]`
+         } if(v <= max()) {
           out.innerHTML = `Status: Open[${mon(v)}]`
+         }*/
+          
          // console.log(test)
         }
         //return mon(round(z))
@@ -99,8 +103,13 @@ function round(a) {
 function mon(a) {
   let x = [] /*x will = a*/;
   x = a;
-  let b = [];
+  let b = []; //b is what will contain the output
+  const temp = ['temp', totalCash()]
+  cid.push(temp)
+  let count = 0;
     for(let i = 0; i < money.length; i++) {
+      
+     // console.log(cid)
      // console.log(`log ${i}`)
       if(x != 0 && x >= 0) {
         if(money[i][1] > x) {
@@ -113,19 +122,17 @@ function mon(a) {
           b.push(money[d][1])
           cid[d][1] = mathSub(cid[d][1], money[d][1])
           x = this.mathSub(x, money[d][1]);
-         } else {
-          d = mathSub(i, 2);
-          b.push(money[d][1])
-          cid[d][1] = mathSub(cid[d][1], money[d][1])
-          x = this.mathSub(x, money[d][1]);
-
+         } if(x >= max()) {
+           x = mathSub(x, max());
+           b.push(max())
+           cid.reverse[1] = mathSub(max(), x)
          }
           i = 0;
           //console.log(x)
           //continue    
         }
         
-        if(x >= max()) {
+       /* if(x >= max()) {
           let d = mathSub(cid.length, 1);
          //console.log(x = this.mathSub(x, max()));
            if(max() <= cid[d][1]) {
@@ -137,48 +144,27 @@ function mon(a) {
            if(max() > cid[d][1]) {
             let count = mathSub(cid.length, 1);
             while(x > 0 && count !== 0) {
-             //let cidLess = mathSub(cid.length, count);
+             let div = cid[count][1] / money[count][1]
+             if(cid[count][1] >= x) {
+              x = 0
+              cid[count][1] = mathSub(x, cid[count][1]);
+              b.push(div)
+             } else {
+              x = mathSub(x, cid[count][1]);
+              b.push(div);
+             }
              x = mathSub(x, money[count][1]);
-             let div = cid[count][1] % money[count][1]
              b.push(div)
              count--;
-            }
-           /* b.push(cid[d][1])
-            x = this.mathSub(x, cid[d][1]);
-            cid[d][1] = 0;
-            //start
-            if(x >= max() && cid[d][1] == 0) {
-             for(let j = 0; j < money.length; j++) {
-              if(x >= max()) {
-                if(money[j][1] >= x) {
-                  if(money[j][1] >= x) {
-                    let q = mathSub(j, 1)
-                   if(money[q][1] <= cid[q][1]) {
-                    b.push(money[q][1])
-                    cid[q][1] = mathSub(cid[q][1], money[q][1])
-                    x = this.mathSub(x, money[q][1]);
-                   } else {
-                    q = mathSub(j, 2);
-                    b.push(money[q][1])
-                    cid[q][1] = mathSub(cid[q][1], money[q][1])
-                    x = this.mathSub(x, money[q][1]);
-          
-                   }
-                    j = 0;
-
-                    
-                  }
-                }
-              }
-             }
-            }*/            
+            }           
            }
-        }
+        } */
       } else {
         //console.log(`final ${x}`)
          console.log(b)
          break
       }
+      cid.splice(-1)
     }
     table(b)
     return b
@@ -213,24 +199,15 @@ function value(a) {
 }
 //Don't ask me, idk yet
 function low(a) {
-  console.log(`low ${a}`)
-  let b = [];
-  for(let i = 0; i < a.length; i++) {
-    let count = 0;
-    let c = mathSub(i, 1);
-    for(let j = 0; j < a.length; j++) {
-      if(a[i] == a[j] && a[i] !== a[c]) {
-        count++
-      }
-    }
-    if(count !== 0) {
-     b.push(a[i][0] && a[i][1] * count)
-    // i += count--
-    } else {
-      b.push(a[i]);
-    }
-  }
-  return b
+  console.log(a, max())
+  let b = a;
+ if(b >= max()) {
+  console.log('small')
+ } else if(b > max()) {
+  console.log('big')
+ } else {
+  console.log('idk')
+ }
 }
 //console.log(money[0].includes(0.01));
 //console.log(mon(10))
@@ -238,3 +215,38 @@ function low(a) {
            b.reverse();
            let c = round(b[0]) * -1;
            console.log(b)*/
+// A = the amount
+// B = how many times it has looped
+// C = a array holding the cash
+function recuse(a, b, c) {
+  console.log(b)
+ let temp = mathSub(b, cid.length) * -1;
+ //console.log(temp)
+ let re = cid[mathSub(temp, 1)];
+ console.log(re)
+ if(b == 10) {
+  return 'I Quit'
+ }
+  if(a >= re[1]) {
+    let w = mathSub(a, re[1]);
+    let bank = [];
+    let idk = cid[mathSub(temp, -1)][1];
+    while(idk > 0) {
+      idk = mathSub(idk, money[mathSub(temp, 1)][1])
+      bank.push(mathSub(idk, money[mathSub(temp, 1)][1]))
+    }
+    cid[mathSub(temp, 1)][1] = 0
+    bank.push(c)
+    bank.push(idk)
+    console.log(w)
+    table()
+    console.log(bank)
+    console.log('look here', money[mathSub(temp, 1)])
+    b++
+    return recuse(w, b, bank)
+  }
+  else {
+    table()
+    console.log('"done"')
+  }
+}
