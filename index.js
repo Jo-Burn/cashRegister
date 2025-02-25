@@ -199,11 +199,36 @@ function value(a) {
 }
 //Don't ask me, idk yet
 function low(a) {
-  console.log(a, max())
+  //console.log(a, max())
   let b = a;
- if(b >= max()) {
+ if(b < max()) {
   console.log('small')
- } else if(b > max()) {
+  let temp = mathSub(cid.length, 1);
+  let bank = [];
+  for(let i = 0; i <= temp; i++) {
+    console.log(i)
+   if(money[i][1] > b) {
+    let minusOne = mathSub(i, 1);
+    //console.log(minusOne)
+    if(cid[minusOne][1] > 0) {
+      bank.push(money[minusOne]);      
+      cid[minusOne][1] = mathSub(cid[minusOne][1], money[minusOne][1]);
+      b = mathSub(b, money[minusOne][1])
+      table()
+    } if(cid[minusOne][1] == 0) {
+      temp = mathSub(temp, 1);
+      i = 0;
+    } 
+    if(b == 0) {
+      console.log('done', bank)
+      return bank
+    } else {
+      i = 0;
+    }
+    
+   }
+  }
+ } if(b > max()) {
   console.log('big')
  } else {
   console.log('idk')
