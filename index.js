@@ -175,31 +175,27 @@ function mon(a) {
 //organizes the array from mon, including the amount from money
 function value(a) {
  console.log(`this ${a}`)
- let b = []
- for(let i = 0; i < a.length; i++) {
-  for(let j = 0; j < money.length; j++) {
-    if(b.includes(a[i]) == false) {
-    //  console.log('this')
-      if(a[i] == money[j][1]) {
-        if(b.includes(money[j][1]) == false) {
-          b.push(money[j]);
-        }
-         if(b.includes(money[j]) == true) {
-         // console.log('test')
-            if(b == money[j][0]) {
-              b.push(money[j][1])
-            }
-          
-        }
-      }
-     }
-   
+ let bank = [];
+for(let i = 0; i < a.length; i++) {
+ if(bank.includes(a[i][0]) == false) {
+ // console.log('work', a[i][1])
+ bank.push(a[i]);
+ a[i] = null
+ //console.log(a[i])
+  } 
+  if(bank.includes(a[i][0]) == true) {
+   for(let j = 0; j < bank.length; j++) {
+    if(bank[j][0] == a[i][0]) {
+      bank[j][1] = bank[j][1] += a[i][1];
+      console.log(bank)
+    }
+   }
   }
  }
- //console.log(b, 'this is B')
- return b
+// console.log(bank, a)
+return bank;
 }
-//Don't ask me, idk yet
+//Separates the inputted number into the corresponding amounts, 0.06 == .05 && .01
 function low(a) {
   //console.log(a, max())
   let b = a;
@@ -227,7 +223,7 @@ function low(a) {
     } 
     if(b == 0) {
      // console.log('done', bank)
-      return bank
+      return value(bank)
     } else {
      // console.log('end', b, bank)
       i = 0;
