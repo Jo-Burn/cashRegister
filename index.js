@@ -55,20 +55,21 @@ function table() {
 function check() {
     cash
     let z = cash.value;
-    
+    let x = mathSub(z, price)
+   // console.log(x, totalCash())
     let test1 = []
     //let count = 0;
     if(z == price) {
       return out.innerHTML = `No change due - customer paid with exact cash`
     }
-    if(z >= price && z < totalCash()) {
+    if(z >= price && x <= totalCash()) {
       z = mathSub(z, price)
-      let v = round(z)
-      if(v > 0 && v < totalCash()) {
+      let v = z
+      if(v > 0 && x <= totalCash()) {
         console.log('Finale', v)
 
         if(v >= 0) {
-         low(v);
+         out.innerHTML = `Status: Open[${low(v)}]`
         /* if(v > max()) {
           out.innerHTML = `Status: Open[${recuse(v, 0, 0)}]`
          } if(v <= max()) {
@@ -79,7 +80,8 @@ function check() {
         }
         //return mon(round(z))
       }
-    } else if(z > totalCash()) {
+    } else if(x > totalCash()) {
+      console.log('here')
       out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
       window.alert("Costumer can not buy this Item")
@@ -172,7 +174,7 @@ function mon(a) {
 }
 //organizes the array from mon, including the amount from money
 function value(a) {
- //console.log(`this ${a}`)
+ console.log(`this ${a}`)
  let b = []
  for(let i = 0; i < a.length; i++) {
   for(let j = 0; j < money.length; j++) {
@@ -195,44 +197,67 @@ function value(a) {
   }
  }
  //console.log(b, 'this is B')
- return low(b)
+ return b
 }
 //Don't ask me, idk yet
 function low(a) {
   //console.log(a, max())
   let b = a;
- if(b < max()) {
-  console.log('small')
-  let temp = mathSub(cid.length, 1);
   let bank = [];
+ if(b < max()) {
+ // console.log('small')
+  let temp = mathSub(cid.length, 1);
+  //let bank = [];
+  let hold = 1;
   for(let i = 0; i <= temp; i++) {
-    console.log(i)
+   // console.log(i)
    if(money[i][1] > b) {
-    let minusOne = mathSub(i, 1);
+    let minusOne = mathSub(i, hold);
     //console.log(minusOne)
     if(cid[minusOne][1] > 0) {
       bank.push(money[minusOne]);      
       cid[minusOne][1] = mathSub(cid[minusOne][1], money[minusOne][1]);
       b = mathSub(b, money[minusOne][1])
       table()
+      hold = 1;
     } if(cid[minusOne][1] == 0) {
-      temp = mathSub(temp, 1);
+      minusOne = hold++;
+      //console.log('here', hold)
       i = 0;
     } 
     if(b == 0) {
-      console.log('done', bank)
+     // console.log('done', bank)
       return bank
     } else {
+     // console.log('end', b, bank)
       i = 0;
     }
     
    }
   }
  } if(b > max()) {
-  console.log('big')
- } else {
-  console.log('idk')
+ // console.log('big')
+  //let bank = [];
+  let hold = 1;
+  let temp = mathSub(cid.length, hold);
+  for(let i = temp; i >= 0; i--) {
+   // console.log(i)
+    if(cid[i][1] > 0) {
+      if(b >= money[i][1]) {
+        b = mathSub(b, money[i][1]);
+        cid[i][1] = mathSub(cid[i][1], money[i][1]);
+        bank.push(money[i]);
+       // table()
+        i = temp;
+      } 
+    } 
+    
+  }
+  table()
+ // console.log(bank)
+ 
  }
+ return value(bank)
 }
 //console.log(money[0].includes(0.01));
 //console.log(mon(10))
