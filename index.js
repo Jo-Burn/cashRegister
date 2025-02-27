@@ -172,25 +172,31 @@ function mon(a) {
     return b
            //return value(b);
 }
-//organizes the array from mon, including the amount from money
+//organizes the array from value, including the amount from money
 function value(a) {
  console.log(`this ${a}`)
  let bank = [];
+ let count = 0;
 for(let i = 0; i < a.length; i++) {
+ // console.log(i)
+ for(let j = 0; j < a.length; j++) {
  if(bank.includes(a[i][0]) == false) {
- // console.log('work', a[i][1])
- bank.push(a[i]);
- a[i] = null
- //console.log(a[i])
-  } 
-  if(bank.includes(a[i][0]) == true) {
-   for(let j = 0; j < bank.length; j++) {
-    if(bank[j][0] == a[i][0]) {
-      bank[j][1] = bank[j][1] += a[i][1];
-      console.log(bank)
-    }
-   }
+  if(a[i] == a[j]) {
+    count++
   }
+ } 
+ }
+ console.log('here',a[i], count)
+ if(count != 0) {
+  a[i][1] = a[i][1] * count
+  count = 0
+ }
+// console.log(bank)
+ if(bank.includes(a[i]) == false) {
+  bank.push(a[i]);
+ } else {
+  a[i] = null
+ }
  }
 // console.log(bank, a)
 return bank;
