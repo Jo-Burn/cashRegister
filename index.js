@@ -180,7 +180,7 @@ function value(a) {
 for(let i = 0; i < a.length; i++) {
  // console.log(i)
  for(let j = 0; j < a.length; j++) {
- if(bank.includes(a[i][0]) == false) {
+ if(includes(bank, a[i][0]) == false) {
   if(a[i] == a[j]) {
     count++
   }
@@ -192,7 +192,7 @@ for(let i = 0; i < a.length; i++) {
   count = 0
  }
 // console.log(bank)
- if(bank.includes(a[i]) == false) {
+ if(includes(bank, a[i][0]) == false) {
   bank.push(a[i]);
  } else {
   a[i] = null
@@ -200,6 +200,15 @@ for(let i = 0; i < a.length; i++) {
  }
 // console.log(bank, a)
 return bank;
+}
+function includes(array, b) {
+ for(let i = 0; i < array.length; i++) {
+  console.log(i)
+  if(array[i][0] == b) {
+    return true
+  }
+ }
+ return false
 }
 //Separates the inputted number into the corresponding amounts, 0.06 == .05 && .01
 function low(a) {
