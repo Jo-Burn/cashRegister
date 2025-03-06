@@ -84,7 +84,7 @@ function check() {
       console.log('here')
       out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
-      window.alert("Costumer can not buy this Item")
+      alert("Costumer can not buy this Item")
     }
 } 
 // a - b, Basically 
