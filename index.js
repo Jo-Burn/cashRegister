@@ -2,7 +2,13 @@ let cash = document.getElementById('cash');
 let click = document.getElementById('click');
 let out = document.getElementById('change-due');
 //let x = click.addEventListener('click', check());
-let test = [];
+class dollar {
+  constructor(name, current, value) {
+    this.name = name;
+    this.current = current;
+    this.value = value;
+  }
+}
 const max = ()=> {
   let c = 0;
   for(let i = 0; i < money.length; i++) {
@@ -25,16 +31,28 @@ const money = [
 ];
 let price = 1.87;
 let cid = [
-  ['PENNY', 1.01],
-  ['NICKEL', 2.05],
-  ['DIME', 3.1],
-  ['QUARTER', 4.25],
-  ['ONE', 90],
-  ['FIVE', 55],
-  ['TEN', 20],
-  ['TWENTY', 60],
-  ['ONE HUNDRED', 100]
+  ['PENNY', 0.01],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 1],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0]
 ];
+let test = [
+  [new dollar(cid[0][0], cid[0][1], money[0][1])],
+  [new dollar(cid[1][0], cid[1][1], money[1][1])],
+  [new dollar(cid[2][0], cid[2][1], money[2][1])],
+  [new dollar(cid[3][0], cid[3][1], money[3][1])],
+  [new dollar(cid[4][0], cid[4][1], money[4][1])],
+  [new dollar(cid[5][0], cid[5][1], money[5][1])],
+  [new dollar(cid[6][0], cid[6][1], money[6][1])],
+  [new dollar(cid[7][0], cid[7][1], money[7][1])],
+  [new dollar(cid[8][0], cid[8][1], money[8][1])]
+];
+console.log(test)
 const totalCash = ()=> {
   let a = 0
   for(let i = 0; i < cid.length; i++) {
@@ -42,6 +60,7 @@ const totalCash = ()=> {
   }
   return round(a)
 }
+console.log(totalCash())
 console.log(`Welcome to My Website, Hope you enjoy <3`)
 window.onload = table
 function table() {
@@ -56,20 +75,23 @@ function check() {
     cash
     let z = cash.value;
     let x = mathSub(z, price)
+    let temp = totalCash()
    // console.log(x, totalCash())
     let test1 = []
     //let count = 0;
+    
     if(z == price) {
       return out.innerHTML = `No change due - customer paid with exact cash`
     }
-    if(z >= price && x <= totalCash()) {
+    if(x > 0 && x <= temp) {
       z = mathSub(z, price)
       let v = z
-      if(v > 0 && x <= totalCash()) {
+      if(v > 0 && x <= temp) {
         console.log('Finale', v)
 
         if(v >= 0) {
-         out.innerHTML = `Status: Open[${low(v)}]`
+          console.log(totalCash())
+         return out.innerHTML = `Status: ${low(v)}`
         /* if(v > max()) {
           out.innerHTML = `Status: Open[${recuse(v, 0, 0)}]`
          } if(v <= max()) {
@@ -80,9 +102,9 @@ function check() {
         }
         //return mon(round(z))
       }
-    } else if(x > totalCash()) {
+    } if(x > temp) {
       console.log('here')
-      out.innerHTML = "Status: INSUFFICIENT_FUNDS"
+      return out.innerHTML = "Status: INSUFFICIENT_FUNDS"
     } else {
       alert("Costumer can not buy this Item")
     }
@@ -174,9 +196,10 @@ function mon(a) {
 }
 //organizes the array from value, including the amount from money
 function value(a) {
- console.log(`this ${a}`)
+// console.log(`this ${a}`)
  let bank = [];
  let count = 0;
+ //let regex = /\b$/
 for(let i = 0; i < a.length; i++) {
  // console.log(i)
  for(let j = 0; j < a.length; j++) {
@@ -186,7 +209,7 @@ for(let i = 0; i < a.length; i++) {
   }
  } 
  }
- console.log('here',a[i], count)
+ //console.log('here',a[i], count)
  if(count != 0) {
   a[i][1] = a[i][1] * count
   count = 0
@@ -198,12 +221,17 @@ for(let i = 0; i < a.length; i++) {
   a[i] = null
  }
  }
-// console.log(bank, a)
-return bank;
+ for(let i = 0; i < bank.length; i++) {
+
+  bank[i] = `${bank[i][0]}: $${bank[i][1]}`
+  console.log(bank)
+ }
+ //console.log(bank, a)
+return `open ${bank}`;
 }
 function includes(array, b) {
  for(let i = 0; i < array.length; i++) {
-  console.log(i)
+ // console.log(i)
   if(array[i][0] == b) {
     return true
   }
@@ -212,7 +240,6 @@ function includes(array, b) {
 }
 //Separates the inputted number into the corresponding amounts, 0.06 == .05 && .01
 function low(a) {
-  //console.log(a, max())
   let b = a;
   let bank = [];
  if(b < max()) {
@@ -221,10 +248,14 @@ function low(a) {
   //let bank = [];
   let hold = 1;
   for(let i = 0; i <= temp; i++) {
-   // console.log(i)
+    //console.log(i, hold)
    if(money[i][1] > b) {
     let minusOne = mathSub(i, hold);
-    //console.log(minusOne)
+    console.log(i, hold, minusOne)
+    if(minusOne < 0) {
+     cid = cid     
+     return `Status: INSUFFICIENT_FUNDS`
+    }
     if(cid[minusOne][1] > 0) {
       bank.push(money[minusOne]);      
       cid[minusOne][1] = mathSub(cid[minusOne][1], money[minusOne][1]);
@@ -232,7 +263,7 @@ function low(a) {
       table()
       hold = 1;
     } if(cid[minusOne][1] == 0) {
-      minusOne = hold++;
+      hold++;
       //console.log('here', hold)
       i = 0;
     } 
